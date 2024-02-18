@@ -189,19 +189,20 @@ input[type=file]::file-selector-button {
 
 .classification>.box img {
     max-width: 100%;
-    /* Ensure image doesn't exceed the box width */
     max-height: 70%;
-    /* Set a max height for the image */
     border-radius: 20px 20px 0 0;
-    /* Rounded corners only at the top */
     object-fit: cover;
-    /* Cover the image within the container */
 }
 
 .classification>.box p {
     padding: 10px;
-    text-align: center;
+    text-align: left;
     margin: 0;
+}
+.classification>.box li{
+  padding: 10px;
+  text-align: left;
+  padding: 10px;
 }
 
 /* navbar */
@@ -228,10 +229,11 @@ input[type=file]::file-selector-button {
 }
 /* nav */
 .nav {
-    height: 50px;
+    height: 80px;
     width: 100%;
-    background-color: #4d4d4d;
+    background-color: #edf2fc;
     position: relative;
+    justify-content: space-between;
   }
   
   .nav > .nav-header {
@@ -241,8 +243,8 @@ input[type=file]::file-selector-button {
   .nav > .nav-header > .nav-title {
     display: inline-block;
     font-size: 22px;
-    color: #fff;
-    padding: 10px 10px 10px 10px;
+    color: #000000;
+    /* padding: 10px 10px 10px 10px; */
   }
   
   .nav > .nav-btn {
@@ -250,16 +252,18 @@ input[type=file]::file-selector-button {
   }
   
   .nav > .nav-links {
+    margin-top: 10px;
     display: inline;
     float: right;
-    font-size: 18px;
+    font-size: 20px;
   }
   
   .nav > .nav-links > a {
     display: inline-block;
     padding: 13px 10px 13px 10px;
+    border-radius: 5px;
     text-decoration: none;
-    color: #efefef;
+    color: #000000;
   }
   
   .nav > .nav-links > a:hover {
@@ -290,7 +294,7 @@ input[type=file]::file-selector-button {
       display: block;
       width: 25px;
       height: 10px;
-      border-top: 2px solid #eee;
+      border-top: 2px solid #000000;
     }
     .nav > .nav-links {
       position: absolute;
