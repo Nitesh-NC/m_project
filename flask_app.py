@@ -83,6 +83,7 @@ def get_disease_info(prediction):
 def index():
     return render_template('index.html')
 
+
 @app.route('/', methods=['POST'])
 def upload_file():
     uploaded_file = request.files['file']
