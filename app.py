@@ -6,16 +6,21 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input
+import gdown
 
 app = Flask(__name__)
 
-# Define paths for the two models
-model1_path = "New_Reduce_Eye_model.h5"
-model2_path = "eyediseases_reduce_outer_model.h5"
+# Define paths for the two models on Google Drive
+model1_drive_link = 'https://drive.google.com/file/d/1982Kkm4-QJkx-CTloDoo4kgiKpB9q5jc/view?usp=sharing'
+model2_drive_link = 'https://drive.google.com/file/d/1rgU38oEotPSwgeRlzDLHz8Q5r3WszlsC/view?usp=drive_link'
+
+# Download models from Google Drive
+gdown.download(model1_drive_link, 'New_Eye_model.h5', quiet=False)
+gdown.download(model2_drive_link, 'eyediseases_outer_model.h5', quiet=False)
 
 # Load the two models
-model1 = tf.keras.models.load_model(model1_path)
-model2 = tf.keras.models.load_model(model2_path)
+model1 = tf.keras.models.load_model("New_Eye_model.h5")
+model2 = tf.keras.models.load_model("eyediseases_outer_model.h5")
 
 class_labels_model1 = {
     0: 'AMD',
